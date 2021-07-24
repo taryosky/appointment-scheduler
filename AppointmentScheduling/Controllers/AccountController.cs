@@ -45,7 +45,7 @@ namespace AppointmentScheduling.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Appointment");
         }
 
         public IActionResult Register()
@@ -77,7 +77,7 @@ namespace AppointmentScheduling.Controllers
                 {
                     _userManager.AddToRoleAsync(user, model.RoleNme).Wait();
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Appointment");
                 }
                 foreach(var m in result.Errors)
                 {
